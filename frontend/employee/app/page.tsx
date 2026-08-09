@@ -9,7 +9,9 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/employees")
+      // .get("http://localhost:5000/employees")
+      .get("/api/employees")
+
       .then((res) => {
         setEmployees(res.data);
       })
