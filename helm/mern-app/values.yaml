@@ -1,0 +1,34 @@
+frontend:
+  replicaCount: 2
+
+  image:
+    repository: mern-frontend
+    tag: "1.0"
+
+  service:
+    type: NodePort
+    port: 3000
+    targetPort: 3000
+
+backend:
+  replicaCount: 2
+
+  image:
+    repository: mern-backend
+    tag: "1.0"
+
+  service:
+    type: ClusterIP
+    port: 5000
+    targetPort: 5000
+
+mysql:
+  image:
+    repository: mysql
+    tag: "8.0"
+
+  service:
+    port: 3306
+
+  persistence:
+    size: 2Gi
